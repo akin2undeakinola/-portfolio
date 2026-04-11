@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ibrahim Akinola — Brand & Communications</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --ink: #0d1117;
+    --paper: #f5f2ed;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --steel: #1e2a38;
+    --muted: #8a8a8a;
+    --border: rgba(201,168,76,0.2);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 4rem;
+    background: rgba(13,17,23,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.05em;
+    color: var(--gold);
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--paper); text-decoration: none; opacity: 0.7;
+    transition: opacity 0.2s, color 0.2s;
+  }
+  .nav-links a:hover { opacity: 1; color: var(--gold); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 8rem 4rem 4rem;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 50%; height: 100%;
+    background: var(--steel);
+    z-index: 0;
+  }
+  .hero-text { position: relative; z-index: 1; padding-right: 4rem; }
+  .hero-eyebrow {
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1.5rem;
+  }
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
+  }
+  .hero-name span { color: var(--gold); }
+  .hero-desc {
+    font-size: 1rem; line-height: 1.8; opacity: 0.75;
+    max-width: 440px; margin-bottom: 2.5rem;
+  }
+  .hero-cta {
+    display: inline-flex; align-items: center; gap: 0.75rem;
+    padding: 0.85rem 2rem;
+    border: 1px solid var(--gold);
+    color: var(--gold); text-decoration: none;
+    font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase;
+    transition: background 0.25s, color 0.25s;
+  }
+  .hero-cta:hover { background: var(--gold); color: var(--ink); }
+  .hero-image-block {
+    position: relative; z-index: 1;
+    display: flex; justify-content: center; align-items: center;
+    padding: 2rem;
+  }
+  .hero-photo {
+    width: 100%; max-width: 380px; aspect-ratio: 3/4;
+    object-fit: cover;
+    border: 1px solid var(--border);
+    /* REPLACE SRC: export your headshot from the portfolio PDF page 2 */
+    background: var(--ink);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-photo-placeholder {
+    width: 100%; max-width: 380px; aspect-ratio: 3/4;
+    border: 1px solid var(--border);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 1rem;
+    color: var(--muted); font-size: 0.78rem; letter-spacing: 0.1em;
+    text-transform: uppercase; text-align: center; padding: 2rem;
+  }
+  .photo-icon {
+    width: 48px; height: 48px; border-radius: 50%;
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+  }
+  .hero-stats {
+    position: absolute; bottom: -1px; left: 0; right: 0;
+    display: grid; grid-template-columns: repeat(3,1fr);
+    border-top: 1px solid var(--border);
+    z-index: 1;
+  }
+  .stat {
+    padding: 1.8rem 2rem;
+    border-right: 1px solid var(--border);
+    background: var(--ink);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; color: var(--gold); display: block;
+  }
+  .stat-label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.6; margin-top: 0.3rem; }
+
+  /* ── SECTIONS ── */
+  section { padding: 6rem 4rem; }
+  .section-eyebrow {
+    font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.75rem;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    margin-bottom: 3rem; line-height: 1.2;
+  }
+
+  /* ── EXPERTISE ── */
+  .expertise { background: var(--steel); }
+  .expertise-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+    gap: 1px; background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .expertise-card {
+    background: var(--steel); padding: 2.5rem 2rem;
+    transition: background 0.2s;
+  }
+  .expertise-card:hover { background: rgba(201,168,76,0.07); }
+  .expertise-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.85rem; color: var(--gold); opacity: 0.5;
+    display: block; margin-bottom: 1.5rem;
+  }
+  .expertise-card h3 { font-size: 1rem; font-weight: 500; margin-bottom: 0.75rem; }
+  .expertise-card p { font-size: 0.85rem; line-height: 1.7; opacity: 0.65; }
+
+  /* ── PORTFOLIO GRID ── */
+  .portfolio-intro { max-width: 560px; }
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .p-item {
+    position: relative; overflow: hidden;
+    background: var(--steel);
+    border: 1px solid var(--border);
+    cursor: pointer;
+  }
+  .p-item.wide { grid-column: span 8; }
+  .p-item.narrow { grid-column: span 4; }
+  .p-item.half { grid-column: span 6; }
+  .p-item.full { grid-column: span 12; }
+  .p-img {
+    width: 100%; aspect-ratio: 16/9;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+  .p-img-placeholder {
+    width: 100%; aspect-ratio: 16/9;
+    background: linear-gradient(135deg, var(--steel) 0%, #0d1a28 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 0.75rem;
+    color: var(--muted); font-size: 0.72rem;
+    letter-spacing: 0.1em; text-transform: uppercase; text-align: center;
+    padding: 1.5rem;
+    transition: transform 0.5s ease;
+  }
+  .p-item:hover .p-img,
+  .p-item:hover .p-img-placeholder { transform: scale(1.03); }
+  .p-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(13,17,23,0.92) 0%, transparent 60%);
+    padding: 1.5rem; display: flex; flex-direction: column;
+    justify-content: flex-end;
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .p-item:hover .p-overlay { opacity: 1; }
+  .p-tag {
+    font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.4rem;
+  }
+  .p-title { font-size: 0.95rem; font-weight: 500; }
+  .p-caption {
+    padding: 1rem 1.25rem;
+    border-top: 1px solid var(--border);
+  }
+  .p-caption .p-tag { margin-bottom: 0.3rem; }
+  .p-caption .p-title { font-size: 0.9rem; }
+  .p-caption p { font-size: 0.78rem; opacity: 0.6; margin-top: 0.3rem; line-height: 1.5; }
+
+  /* image replacement instructions */
+  .img-note {
+    font-size: 0.65rem; opacity: 0.4; margin-top: 0.5rem;
+    font-style: italic; text-align: center;
+  }
+
+  /* ── EXPERIENCE ── */
+  .experience { background: var(--steel); }
+  .exp-list { display: flex; flex-direction: column; gap: 0; }
+  .exp-item {
+    display: grid; grid-template-columns: 200px 1fr;
+    gap: 3rem; padding: 3rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .exp-item:first-child { border-top: 1px solid var(--border); }
+  .exp-meta { padding-top: 0.2rem; }
+  .exp-dates { font-size: 0.78rem; color: var(--gold); letter-spacing: 0.08em; }
+  .exp-company { font-size: 0.82rem; opacity: 0.55; margin-top: 0.5rem; line-height: 1.5; }
+  .exp-role { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 1rem; }
+  .exp-points { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .exp-points li {
+    font-size: 0.88rem; line-height: 1.7; opacity: 0.75;
+    padding-left: 1rem; position: relative;
+  }
+  .exp-points li::before {
+    content: '—'; position: absolute; left: 0;
+    color: var(--gold); opacity: 0.6;
+  }
+
+  /* ── CLIENTS ── */
+  .clients-row {
+    display: flex; flex-wrap: wrap; gap: 1px;
+    background: var(--border); border: 1px solid var(--border);
+    margin-top: 2rem;
+  }
+  .client-cell {
+    background: var(--ink); flex: 1; min-width: 150px;
+    padding: 2rem; display: flex; align-items: center; justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; opacity: 0.6;
+    transition: opacity 0.2s;
+  }
+  .client-cell:hover { opacity: 1; color: var(--gold); }
+
+  /* ── CONTACT ── */
+  .contact {
+    background: var(--gold);
+    color: var(--ink);
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: center;
+  }
+  .contact .section-eyebrow { color: rgba(13,17,23,0.5); }
+  .contact .section-title { color: var(--ink); margin-bottom: 1.5rem; }
+  .contact-desc { font-size: 1rem; line-height: 1.8; opacity: 0.75; max-width: 420px; }
+  .contact-details { display: flex; flex-direction: column; gap: 1.5rem; }
+  .contact-item { display: flex; flex-direction: column; gap: 0.25rem; }
+  .contact-label { font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.55; }
+  .contact-value { font-family: 'Playfair Display', serif; font-size: 1.2rem; }
+  .contact-value a { color: var(--ink); text-decoration: none; }
+  .contact-value a:hover { text-decoration: underline; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink); padding: 2rem 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid var(--border);
+    font-size: 0.75rem; opacity: 0.45;
+  }
+
+  /* ── ANIMATIONS ── */
+  .fade-up {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.5rem; }
+    .hero { grid-template-columns: 1fr; padding: 6rem 1.5rem 2rem; }
+    .hero::before { display: none; }
+    .hero-text { padding-right: 0; }
+    .hero-image-block { display: none; }
+    .hero-stats { grid-template-columns: repeat(3,1fr); position: relative; }
+    section { padding: 4rem 1.5rem; }
+    .exp-item { grid-template-columns: 1fr; gap: 1rem; }
+    .contact { grid-template-columns: 1fr; padding: 4rem 1.5rem; }
+    .p-item.wide, .p-item.narrow, .p-item.half { grid-column: span 12; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Ibrahim Akinola</div>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text fade-up">
+    <p class="hero-eyebrow">Brand &amp; Corporate Communications · Lagos, Nigeria</p>
+    <h1 class="hero-name">Ibrahim<br/><span>Akinola</span></h1>
+    <p class="hero-desc">Corporate Brand &amp; PR Specialist with 5+ years delivering visual communications, conference representation, and media operations for Nigeria's leading independent upstream oil &amp; gas company.</p>
+    <a href="#contact" class="hero-cta">Get in touch →</a>
+  </div>
+  <div class="hero-image-block">
+    <!--
+      PHOTO INSTRUCTIONS:
+      Replace the placeholder below with an <img> tag pointing to your headshot.
+      Export page 2 of your portfolio PDF as a JPG, name it "headshot.jpg"
+      and place it in the same folder as this index.html file.
+      Then replace the div below with:
+      <img src="headshot.jpg" alt="Ibrahim Akinola" class="hero-photo"/>
+    -->
+    <div class="hero-photo-placeholder">
+      <div class="photo-icon">IA</div>
+      <span>Replace with headshot.jpg<br/>(export from portfolio page 2)</span>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><span class="stat-num">5+</span><span class="stat-label">Years experience</span></div>
+    <div class="stat"><span class="stat-num">7+</span><span class="stat-label">Business units served</span></div>
+    <div class="stat"><span class="stat-num">0</span><span class="stat-label">Brand compliance failures</span></div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section class="expertise" id="expertise">
+  <p class="section-eyebrow fade-up">What I do</p>
+  <h2 class="section-title fade-up">Core disciplines</h2>
+  <div class="expertise-grid">
+    <div class="expertise-card fade-up">
+      <span class="expertise-num">01</span>
+      <h3>Brand Governance</h3>
+      <p>Sole in-house brand authority across a multi-SBU energy group — enforcing visual identity standards across print, digital, and internal channels.</p>
+    </div>
+    <div class="expertise-card fade-up">
+      <span class="expertise-num">02</span>
+      <h3>Conference &amp; Event Branding</h3>
+      <p>Exhibition wall panels, pull-up banners, and full event collateral for NIES and NAPE — plus real-time social media coverage on the ground.</p>
+    </div>
+    <div class="expertise-card fade-up">
+      <span class="expertise-num">03</span>
+      <h3>Corporate Publications</h3>
+      <p>Internal newsletters, executive briefing decks, annual reports, HSE communications, and media kits including IATF 2023.</p>
+    </div>
+    <div class="expertise-card fade-up">
+      <span class="expertise-num">04</span>
+      <h3>PR &amp; Media Relations</h3>
+      <p>Press ad production for Premium Times, media documentation for EPF commissioning, and active editorial contacts at Premium Times and Vanguard.</p>
+    </div>
+    <div class="expertise-card fade-up">
+      <span class="expertise-num">05</span>
+      <h3>Collateral &amp; Merchandise</h3>
+      <p>End-to-end production of branded gifts, merchandise, and collateral — from concept through vendor management to event-day distribution.</p>
+    </div>
+    <div class="expertise-card fade-up">
+      <span class="expertise-num">06</span>
+      <h3>Digital &amp; Content</h3>
+      <p>Corporate website content updates, digital campaign assets, and social media visuals — brand-consistent across all platforms.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="work">
+  <div class="portfolio-intro">
+    <p class="section-eyebrow fade-up">Selected work</p>
+    <h2 class="section-title fade-up">Brand &amp; communications portfolio</h2>
+  </div>
+  <div class="portfolio-grid">
+
+    <!-- Item 1: NAPE/NIES Conference -->
+    <div class="p-item wide fade-up">
+      <!--
+        IMAGE: Export portfolio PDF page 14 or 15 as "nape-banner.jpg"
+        Replace the div below with: <img src="nape-banner.jpg" alt="NAPE Conference Branding" class="p-img"/>
+      -->
+      <div class="p-img-placeholder">
+        <span>nape-banner.jpg</span>
+        <span class="img-note">Export PDF page 14</span>
+      </div>
+      <div class="p-overlay">
+        <p class="p-tag">Conference Branding · Upstream O&amp;G</p>
+        <p class="p-title">NAPE &amp; NIES Exhibition Branding</p>
+      </div>
+      <div class="p-caption">
+        <p class="p-tag">Conference Branding · Matrix Energy E&amp;P</p>
+        <p class="p-title">NAPE &amp; NIES Exhibition Branding</p>
+        <p>Large-format wall panels, pull-up banners, and full conference collateral for Nigeria's premier upstream industry events. Real-time social media coverage on the ground.</p>
+      </div>
+    </div>
+
+    <!-- Item 2: Matrix E&P Rollup -->
+    <div class="p-item narrow fade-up">
+      <!--
+        IMAGE: Export portfolio PDF page 16 as "apani-community.jpg"
+        Replace the div below with: <img src="apani-community.jpg" alt="Apani Community Trust" class="p-img"/>
+      -->
+      <div class="p-img-placeholder">
+        <span>apani-community.jpg</span>
+        <span class="img-note">Export PDF page 16</span>
+      </div>
+      <div class="p-overlay">
+        <p class="p-tag">Community Relations</p>
+        <p class="p-title">Apani Host Community Development Trust</p>
+      </div>
+      <div class="p-caption">
+        <p class="p-tag">Community Relations · Stakeholder Engagement</p>
+        <p class="p-title">Apani Host Community Development Trust</p>
+        <p>Event branding and collateral for the inauguration of the Apani Energy Host Community Development Trust.</p>
+      </div>
+    </div>
+
+    <!-- Item 3: Matrix Calendar -->
+    <div class="p-item narrow fade-up">
+      <!--
+        IMAGE: Export portfolio PDF page 13 as "matrix-calendar.jpg"
+        Replace the div below with: <img src="matrix-calendar.jpg" alt="Matrix Energy Calendar" class="p-img"/>
+      -->
+      <div class="p-img-placeholder">
+        <span>matrix-calendar.jpg</span>
+        <span class="img-note">Export PDF page 13</span>
+      </div>
+      <div class="p-overlay">
+        <p class="p-tag">Print · Corporate</p>
+        <p class="p-title">Matrix Energy Desktop Calendar</p>
+      </div>
+      <div class="p-caption">
+        <p class="p-tag">Print Design · Matrix Energy Group</p>
+        <p class="p-title">Corporate Desktop Calendar</p>
+        <p>Annual desktop calendar featuring Terminal Operations photography and Matrix Energy branding.</p>
+      </div>
+    </div>
+
+    <!-- Item 4: Corporate Designs -->
+    <div class="p-item half fade-up">
+      <!--
+        IMAGE: Export portfolio PDF page 17 as "corporate-designs.jpg"
+        Replace the div below with: <img src="corporate-designs.jpg" alt="Corporate Designs" class="p-img"/>
+      -->
+      <div class="p-img-placeholder">
+        <span>corporate-designs.jpg</span>
+        <span class="img-note">Export PDF page 17</span>
+      </div>
+      <div class="p-overlay">
+        <p class="p-tag">Corporate Communications</p>
+        <p class="p-title">Corporate Visual Communications</p>
+      </div>
+      <div class="p-caption">
+        <p class="p-tag">Corporate Design · Matrix Energy Group</p>
+        <p class="p-title">Corporate Visual Communications</p>
+        <p>Company profile sheets, HSE communications, fraud awareness campaigns, and internal announcements across the Group.</p>
+      </div>
+    </div>
+
+    <!-- Item 5: Newsletter -->
+    <div class="p-item half fade-up">
+      <!--
+        IMAGE: Export portfolio PDF page 27 as "newsletter.jpg"
+        Replace the div below with: <img src="newsletter.jpg" alt="Matrix Newsletter" class="p-img"/>
+      -->
+      <div class="p-img-placeholder">
+        <span>newsletter.jpg</span>
+        <span class="img-note">Export PDF page 27</span>
+      </div>
+      <div class="p-overlay">
+        <p class="p-tag">Internal Communications</p>
+        <p class="p-title">Matrix Energy Group Newsletter</p>
+      </div>
+      <div class="p-caption">
+        <p class="p-tag">Internal Communications · Editorial</p>
+        <p class="p-title">Matrix Energy Group Newsletter</p>
+        <p>Internal publication covering operational milestones, wellness initiatives, and corporate updates — including US Coast Guard commendation of the Warri Terminal.</p>
+      </div>
+    </div>
+
+    <!-- Item 6: HERizon Event -->
+    <div class="p-item wide fade-up">
+      <!--
+        IMAGE: Export portfolio PDF page 6 or 7 as "herizon-event.jpg"
+        Replace the div below with: <img src="herizon-event.jpg" alt="HERizon Launch Summit" class="p-img"/>
+      -->
+      <div class="p-img-placeholder">
+        <span>herizon-event.jpg</span>
+        <span class="img-note">Export PDF page 6 or 7</span>
+      </div>
+      <div class="p-overlay">
+        <p class="p-tag">Event Branding · Full Suite</p>
+        <p class="p-title">HERizon Launch Summit 2026</p>
+      </div>
+      <div class="p-caption">
+        <p class="p-tag">Event Branding · Full Collateral Suite</p>
+        <p class="p-title">HERizon Launch Summit 2026</p>
+        <p>Complete event identity — stage backdrop, pull-up banners, delegate ID cards, branded merchandise, and outdoor advertising.</p>
+      </div>
+    </div>
+
+    <!-- Item 7: Wema Bank -->
+    <div class="p-item half fade-up">
+      <!--
+        IMAGE: Export portfolio PDF page 29 as "wema-bank.jpg"
+        Replace the div below with: <img src="wema-bank.jpg" alt="Wema Bank Internal Comms" class="p-img"/>
+      -->
+      <div class="p-img-placeholder">
+        <span>wema-bank.jpg</span>
+        <span class="img-note">Export PDF page 29</span>
+      </div>
+      <div class="p-overlay">
+        <p class="p-tag">Internal Comms · Financial Sector</p>
+        <p class="p-title">Wema Bank Communications</p>
+      </div>
+      <div class="p-caption">
+        <p class="p-tag">Employer Branding · Wema Bank</p>
+        <p class="p-title">Internal Communications Suite</p>
+        <p>HR and internal communications design across performance management, health benefits, and employee engagement campaigns.</p>
+      </div>
+    </div>
+
+    <!-- Item 8: Social media analytics -->
+    <div class="p-item half fade-up">
+      <!--
+        IMAGE: Export portfolio PDF page 28 as "social-analytics.jpg"
+        Replace the div below with: <img src="social-analytics.jpg" alt="Social Media Management" class="p-img"/>
+      -->
+      <div class="p-img-placeholder">
+        <span>social-analytics.jpg</span>
+        <span class="img-note">Export PDF page 28</span>
+      </div>
+      <div class="p-overlay">
+        <p class="p-tag">Digital · Content</p>
+        <p class="p-title">Social Media Management</p>
+      </div>
+      <div class="p-caption">
+        <p class="p-tag">Digital Content · Matrix Energy Group</p>
+        <p class="p-title">Corporate Social Channels</p>
+        <p>Managing Matrix Energy's LinkedIn (33K+ followers) and Instagram (7,800+ followers) — 49,641 organic impressions in a single month.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience" id="experience">
+  <p class="section-eyebrow fade-up">Career</p>
+  <h2 class="section-title fade-up">Work experience</h2>
+  <div class="exp-list">
+    <div class="exp-item fade-up">
+      <div class="exp-meta">
+        <p class="exp-dates">2023 — Present</p>
+        <p class="exp-company">Matrix Energy Group<br/>incl. Matrix Energy E&amp;P<br/>Lagos, Nigeria</p>
+      </div>
+      <div>
+        <h3 class="exp-role">Communications &amp; Design Specialist</h3>
+        <ul class="exp-points">
+          <li>Sole in-house brand authority across all Group Strategic Business Units — zero compliance failures</li>
+          <li>NIES and NAPE conference branding — exhibition wall panels, banners, collateral, and real-time social media coverage</li>
+          <li>Media kit and sponsorship briefing document for IATF 2023</li>
+          <li>Photography coordination and media documentation for EPF commissioning on active production sites</li>
+          <li>Apani Host Community Development Trust — event branding and stakeholder engagement collateral</li>
+          <li>Press advertisement production for Premium Times Annual Bankers Report</li>
+          <li>Internal newsletter, executive decks, HSE campaigns, and corporate publications</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item fade-up">
+      <div class="exp-meta">
+        <p class="exp-dates">2022 — 2023</p>
+        <p class="exp-company">Wema Bank<br/>Lagos, Nigeria</p>
+      </div>
+      <div>
+        <h3 class="exp-role">Talent Branding &amp; Design Specialist</h3>
+        <ul class="exp-points">
+          <li>End-to-end design for 3 employer branding and recruitment campaigns</li>
+          <li>Full campaign collateral — social graphics, digital banners, event materials, branded recruitment packs</li>
+          <li>Sole design resource across HR, Communications, and business units simultaneously</li>
+        </ul>
+      </div>
+    </div>
+    <div class="exp-item fade-up">
+      <div class="exp-meta">
+        <p class="exp-dates">2021 — 2022</p>
+        <p class="exp-company">Lee Digital / Regnanat Digital<br/>Lagos, Nigeria</p>
+      </div>
+      <div>
+        <h3 class="exp-role">Freelance Visual Designer</h3>
+        <ul class="exp-points">
+          <li>Book cover and publication design for independent publishing clients</li>
+          <li>Brand collateral, poster design, and social media graphics across varied industries</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section>
+  <p class="section-eyebrow fade-up">Brands</p>
+  <h2 class="section-title fade-up">Companies I've worked with</h2>
+  <div class="clients-row fade-up">
+    <div class="client-cell">Matrix Energy Group</div>
+    <div class="client-cell">Matrix Energy E&amp;P</div>
+    <div class="client-cell">Wema Bank</div>
+    <div class="client-cell">Red Bull</div>
+    <div class="client-cell">Sterling Bank</div>
+    <div class="client-cell">Maltina</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div>
+    <p class="section-eyebrow fade-up">Get in touch</p>
+    <h2 class="section-title fade-up">Let's work together</h2>
+    <p class="contact-desc fade-up">Available for brand and communications roles in the energy sector and beyond. Based in Lagos, Nigeria.</p>
+  </div>
+  <div class="contact-details fade-up">
+    <div class="contact-item">
+      <span class="contact-label">Email</span>
+      <span class="contact-value"><a href="mailto:akin2undeakinola@gmail.com">akin2undeakinola@gmail.com</a></span>
+    </div>
+    <div class="contact-item">
+      <span class="contact-label">Phone</span>
+      <span class="contact-value"><a href="tel:+2347037664544">+234 703 766 4544</a></span>
+    </div>
+    <div class="contact-item">
+      <span class="contact-label">Location</span>
+      <span class="contact-value">Lagos, Nigeria</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2026 Ibrahim Akinola</span>
+  <span>Brand &amp; Corporate Communications · Lagos</span>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
